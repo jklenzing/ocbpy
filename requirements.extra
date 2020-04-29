@@ -26,8 +26,13 @@ if [ $EXTRAS = 1 ]; then
     pip install madrigalWeb
     pip install PyForecastTools
     pip install pysatCDF >/dev/null
-    # Install pysat
-    pip install -v pysat>=2.1.0
+    # Custom pysat install
+    cd ..
+    git clone https://github.com/pysat/pysat.git
+    cd pysat
+    git checkout develop-3
+    python setup.py install
+    export PYTHONPATH=$PYTHONPATH:$(pwd)
     # Make the pyast data directory
     #printf "import os\nimport pysat\npdir=os.path.join(os.path.split(pysat.__file__)[0], 'pysatData')\nos.mkdir(pdir)\npysat.utils.set_data_dir(pdir)" | python
     mkdir $HOME/build/pysatData
