@@ -16,11 +16,11 @@ import unittest
 
 import ocbpy
 # try:
-    # Import pysat first to get the correct error message
-    import pysat
-    import ocbpy.instruments.pysat_instruments as ocb_pysat
-    import pandas as pds
-    no_pysat = False
+# Import pysat first to get the correct error message
+import pysat
+import ocbpy.instruments.pysat_instruments as ocb_pysat
+import pandas as pds
+no_pysat = False
 # except ImportError:
 #     no_pysat = True
 
