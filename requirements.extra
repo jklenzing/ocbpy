@@ -32,7 +32,7 @@ if [ $EXTRAS = 1 ]; then
     cd ./pysat
   # install pysat
     git checkout develop-3
-    python setup.py install >/dev/null
+    python setup.py install
     export PYTHONPATH=$PYTHONPATH:$(pwd)    
   # Make the pyast data directory
     #printf "import os\nimport pysat\npdir=os.path.join(os.path.split(pysat.__file__)[0], 'pysatData')\nos.mkdir(pdir)\npysat.utils.set_data_dir(pdir)" | python
