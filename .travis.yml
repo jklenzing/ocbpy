@@ -20,6 +20,8 @@ before_install:
     # Force Travis CI to get a newer version of numpy
     - pip install numpy --upgrade
     - bash requirements.extra $INSTALL_EXTRA
+    - pip install pytest
+    - pip install pytest-cov
 install:
     - "python setup.py install"
 before_script:
@@ -30,5 +32,5 @@ before_script:
       sleep 3;
     fi
 script:
-    - "coverage run --source=ocbpy setup.py test"
+    - pytest -vs --cov=ocbpy/
 after_success: coveralls
