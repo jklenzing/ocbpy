@@ -15,6 +15,7 @@ env:
     - INSTALL_EXTRA=1
     - INSTALL_EXTRA=2 CDF_LIB=$HOME/lib
 before_install:
+    - pip install numpy==1.19.0rc1
     - pip install -r requirements.txt
     - bash requirements.extra $INSTALL_EXTRA
 install:
